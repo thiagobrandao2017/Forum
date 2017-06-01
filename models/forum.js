@@ -8,5 +8,17 @@ module.exports = {
       ORDER BY topic_rating
       DESC
     `);
-  }
+  },
+  save(topic) {
+    return db.one(`
+      INSERT INTO topics (
+        title,
+        description
+      ) VALUES (
+        $/title/,
+        $/description/
+      )
+      RETURNING *
+      `, topic);
+    },
 };
