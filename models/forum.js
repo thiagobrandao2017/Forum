@@ -37,6 +37,19 @@ module.exports = {
             ORDER by comment_rating
             DESC
             `, [topic_id]);
-          }
+          },
+
+          saveComment(comment) {
+            return db.one(`
+              INSERT INTO comments (
+                user_comment,
+                topics_id
+              ) VALUES (
+                $/user_comment/,
+                $/topic_id/
+              )
+              RETURNING *
+              `, comment);
+            },
 
         };

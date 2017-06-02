@@ -44,5 +44,14 @@ module.exports = {
     });
   },
 
+  createComment(req,res) {
+    Forum.saveComment(req.body.comment)
+    .then(() => {
+      res.redirect(`/forum/${req.params.id}`);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  },
 
 };

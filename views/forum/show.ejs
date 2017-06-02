@@ -17,6 +17,7 @@
 
   <div class="top-bar">
     <h1><%= topic.title %></h1>
+    <a href="/forum">Go back to Topics</a>
     <h3><%= topic.description %></h3>
   </div>
 
@@ -25,11 +26,11 @@
       <h2>Current Comments</h2>
       <% comments.forEach((comment) => { %>
         <p><%= comment.user_comment %></p>
-        <% }); %>
+      <% }); %>
       </div>
     </div>
 
-    <form class="form-horizontal"  method="POST" action="/:id">
+    <form class="form-horizontal"  method="POST" action="/forum/<%= topic.id %>">
     <fieldset>
 
     <!-- Form Name -->
@@ -39,6 +40,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for=""></label>
       <div class="col-md-4">
+        <input type="hidden" name="comment[topic_id]" value="<%= topic.id %>">
         <textarea class="form-control" id="" name="comment[user_comment]"></textarea>
       </div>
     </div>
