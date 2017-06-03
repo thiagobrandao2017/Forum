@@ -54,4 +54,16 @@ module.exports = {
     });
   },
 
+  update(req,res) {
+    Forum.updateRating(req.params.id)
+    .then((data) => {
+      res.json(data)
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  }
+
+
 };

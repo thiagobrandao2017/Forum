@@ -2,13 +2,14 @@ const router     = require('express').Router();
 const controller = require('./controller');
 
 
+router.get('/',controller.index);
 router.get('/new',controller.formNew);
+router.get('/:id(\\d+)/',controller.show);
 
 router.post('/',controller.create);
-router.get('/',controller.index);
-
-
-router.get('/:id(\\d+)/',controller.show);
 router.post('/:id(\\d+)/',controller.createComment);
+
+router.put('/:id(\\d+)/',controller.update);
+
 
 module.exports = router;

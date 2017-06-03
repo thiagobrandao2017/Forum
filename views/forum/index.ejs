@@ -36,13 +36,13 @@
 <div class="container">
   <ul class="collection">
     <% topics.forEach((topic) => { %>
-      <li class="collection-item avatar">
+      <li class="collection-item avatar" >
         <i class="material-icons circle green">insert_chart</i>
         <span class="title"><%= topic.title %></span>
         <p><%= topic.topic_rating %> Likes <br>
           <a href="/forum/<%= topic.id %>">View Or Add Comments</a>
         </p>
-        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        <button class="like-topic" data-x="<%= topic.id %>">LIKE</button>
       </li>
       <% }); %>
     </ul>

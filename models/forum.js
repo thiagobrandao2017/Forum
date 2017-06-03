@@ -52,4 +52,14 @@ module.exports = {
               `, comment);
             },
 
+
+            updateRating(id) {
+              return db.one(`
+                UPDATE topics
+                SET topic_rating = topic_rating +1
+                WHERE id = $1
+                RETURNING *
+                `, id)
+            }
+
         };
