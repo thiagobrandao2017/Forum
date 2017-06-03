@@ -62,8 +62,15 @@ module.exports = {
     .catch((err) => {
       console.log(err);
     });
+  },
 
+  updateComment(req,res){
+    Forum.updateCommentRating(req.body)
+    .then((data) => {
+      res.json(data)
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }
-
-
 };

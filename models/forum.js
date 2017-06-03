@@ -60,6 +60,14 @@ module.exports = {
                 WHERE id = $1
                 RETURNING *
                 `, id)
-            }
+            },
 
+              updateCommentRating(id) {
+                return db.one(`
+                  UPDATE comments
+                  SET comment_rating = comment_rating +1
+                  WHERE id = $1
+                  RETURNING *
+                  `,id)
+              }
         };

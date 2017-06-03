@@ -34,7 +34,7 @@
     <ul class="collection with-header">
       <li class="collection-header">Current Comments</li>
       <% comments.forEach((comment) => { %>
-        <li class="collection-item"><%= comment.user_comment %><button type="button" name="like-button">LIKE</button>
+        <li class="collection-item"><%= comment.user_comment %><button type="button" name="like-button" class="comment-like" data-z="<%= comment.id %>">LIKE</button>
           <h5><%= comment.comment_rating%> Likes</h5></li>
           <% }); %>
         </ul>
