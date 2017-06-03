@@ -1,0 +1,105 @@
+body {
+  background-color: rgba(70, 190, 130, 0.5);
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+h1 {
+  text-align: center;
+  color: green;
+  font-family: 'Knewave', cursive;
+}
+
+h2 {
+  text-align: center;
+  color: green;
+
+}
+
+h3 {
+  text-align: center;
+  color: green;
+  font-family: 'Lily Script One', cursive;
+}
+.new-topic {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.title {
+  font-size: 18px;
+}
+
+p,a {
+  color: green;
+}
+
+.collection .collection-item.avatar .title {
+  color: green;
+  font-size: 30px;
+}
+
+.waves-effect {
+  background-color: green;
+}
+
+h4 {
+  text-align: center;
+  font-size: 20px;
+  color: green;
+}
+button {
+  background-color: green;
+  color: white;
+  text-align: center;
+  margin-left: 10px;
+}
+ul {
+  background-color: white;
+}
+.collection-header {
+  font-size: 25px;
+  color: green;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.collection-item {
+  text-align: left;
+  color: green;
+  font-size: 20px;
+}
+
+h5 {
+  padding-left: 30px;
+  font-size: 17px;
+  color: green;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+fieldset {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+textarea {
+  border-color: green;
+}
+
+.new-comment {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: green;
+  font-size: 21px;
+}
+#singlebutton {
+  color: white;
+  background-color: green;
+}
+.new-topic {
+  color: green;
+}
+#submitButton{
+  background-color: green;
+  color: white;
+}
+.col-md-4.control-label {
+  color: green;
+}

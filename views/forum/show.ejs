@@ -3,6 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>Jake's Forum</title>
+  <link href="https://fonts.googleapis.com/css?family=Knewave|Kumar+One|Lily+Script+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+  <!-- Materialize CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/vendor/materialize/css/materialize.min.css" />
 
   <!-- Application Styles -->
   <link rel="stylesheet" href="/css/style.css" />
@@ -10,52 +15,62 @@
   <!-- jQuery -->
   <script src="/vendor/jquery/jquery.min.js"></script>
 
+  <!-- Materialize JS -->
+  <script src="/vendor/materialize/js/materialize.min.js"></script>
+
   <!-- Application JS -->
   <script src="/js/app.js"></script>
+
 </head>
 <body>
 
   <div class="top-bar">
     <h1><%= topic.title %></h1>
-    <a href="/forum">Go back to Topics</a>
+    <a class="go-back" href="/forum"><h4>Go back to Topics</h4></a>
     <h3><%= topic.description %></h3>
   </div>
 
   <div class="container">
-    <div class="row">
-      <h2>Current Comments</h2>
+    <ul class="collection with-header">
+      <li class="collection-header">Current Comments</li>
       <% comments.forEach((comment) => { %>
-        <p><%= comment.user_comment %></p>
-      <% }); %>
+        <li class="collection-item"><%= comment.user_comment %><button type="button" name="like-button">LIKE</button>
+          <h5><%= comment.comment_rating%> Likes</h5></li>
+
+          <% }); %>
+        </ul>
+
       </div>
-    </div>
 
-    <form class="form-horizontal"  method="POST" action="/forum/<%= topic.id %>">
-    <fieldset>
+      <form class="form-horizontal"  method="POST" action="/forum/<%= topic.id %>">
+        <fieldset>
 
-    <!-- Form Name -->
-    <legend>Add a comment</legend>
+          <!-- Form Name -->
+          <legend class="new-comment">Add a comment</legend>
 
-    <!-- Textarea -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for=""></label>
-      <div class="col-md-4">
-        <input type="hidden" name="comment[topic_id]" value="<%= topic.id %>">
-        <textarea class="form-control" id="" name="comment[user_comment]"></textarea>
-      </div>
-    </div>
+          <!-- Textarea -->
+          <div class="form-group">
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="hidden" name="comment[topic_id]" value="<%= topic.id %>">
+                    <textarea id="textarea1" name="comment[user_comment]" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Your comment goes here</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="singlebutton"></label>
+              <div class="col-md-4">
+                <button id="singlebutton" name="singlebutton" class="btn btn-primary">+ Add Comment</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
 
-    <!-- Button -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="singlebutton"></label>
-      <div class="col-md-4">
-        <button id="singlebutton" name="singlebutton" class="btn btn-primary">+ Add Comment</button>
-      </div>
-    </div>
 
-    </fieldset>
-    </form>
-
-
-  </body>
-  </html>
+      </body>
+      </html>
