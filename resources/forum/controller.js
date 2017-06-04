@@ -65,7 +65,7 @@ module.exports = {
   },
 
   updateComment(req,res){
-    Forum.updateCommentRating(req.body)
+    Forum.updateCommentRating(req.params.id)
     .then((data) => {
       res.json(data)
     })

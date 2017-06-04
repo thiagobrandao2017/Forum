@@ -29,11 +29,11 @@ $(document).ready(function(){
 
    $.ajax({
      type: "PUT",
-     url: `http://localhost:3000/forum/${urlId}`
+     url: `http://localhost:3000/forum/${urlId}/${commentId}`
    })
    .then(function() {
      console.log('successfully updated');
-    //  window.location.replace(`/`);
+     window.location.replace(`/forum/${urlId}`);
    })
    .catch(function(err) {
      console.log(err, "ERROR");
