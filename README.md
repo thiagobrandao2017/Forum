@@ -17,7 +17,9 @@
 My app successfully uses get, post, and put.
 
 GET - Used to show all the data from the database(topics and comments).
+
 POST - Used to create a new topics and comments.
+
 PUT -  Used to update the likes on the page.
 
 ## AJAX
