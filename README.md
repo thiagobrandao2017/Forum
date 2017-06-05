@@ -25,3 +25,9 @@ PUT -  Used to update the likes on the page.
 ## AJAX
 
 Used to update the likes for both topics and comments based on user clicks.
+
+## Improvements
+
+Once topics and comments are designated to a certain user, that user will be able to delete or edit their post.
+
+Styling needs some work.
